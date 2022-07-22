@@ -8,19 +8,19 @@ TARGET = libviterbi.so
 all: $(TARGET)
 
 clean:
-	$(RM) *.o $(BINS)
+	$(RM) *.o $(TARGET)
 
 test: viterbi_test
 	./viterbi_test
 
 viterbi.o: viterbi.cpp viterbi.h
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $<
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -fPIC -c $<
 
 viterbi_wrapper.o: viterbi_wrapper.cpp viterbi.h
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $<
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -fPIC -c $<
 
 viterbi_test.o: viterbi_test.cpp viterbi.h
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $<
+	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -fPIC -c $<
 
 viterbi_test: viterbi_test.o viterbi.o
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) $^ -o $@
