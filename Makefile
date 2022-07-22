@@ -3,7 +3,7 @@
 # Created by: Min Xu <mxu@scu.edu> or <xukmin@gmail.com>
 # Date: 01/30/2015
 
-TARGET = libviterbi.so
+TARGET = ${libdir}/libviterbi.so
 
 all: $(TARGET)
 
